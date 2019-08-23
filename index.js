@@ -11,7 +11,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 let led;
 
 board.on('ready', function() {
-    led = new five.Led(12);
+    led = new five.Led.RGB({
+        pins: {
+            red: 6,
+            green: 5,
+            blue: 3
+        }
+    });
 });
 
 app.get("/", (req, res)=>{
@@ -21,11 +27,31 @@ app.get("/", (req, res)=>{
 });
 
 app.post("/", (req, res)=>{
-    if(req.body.ope_data == "つける"){
-        led.on();
-    }
-    if(req.body.ope_data == "消える"){
-        led.off();
+    switch(req.body.ope_data){
+        case "赤色":
+            led.color("FF0000");
+            break;
+        case "桃色":
+            led.color("FF00FF");
+            break;
+        case "黄色":
+            led.color("FFFF00");
+            break;
+        case "緑色":
+            led.color("00FF00");
+            break;
+        case "青色":
+            led.color("0000FF");
+            break;
+        case "紫":
+            led.color("4B0082");
+            break;
+        case "つける":
+            led.color("FFFFFF");
+            break;
+        case "消える":
+            led.off();
+            break;
     }
     res.render("index.ejs",{
         content: req.body.ope_data,

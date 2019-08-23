@@ -6,7 +6,7 @@
 - Express Generator
 - Google Chrome
 - 抵抗
-- LED
+- フルカラーLED
 - ジャンパー線
 - ブレッドボード
 - Arduinoに繋がるUSBケーブル
@@ -29,15 +29,18 @@ Arduino IDEでシリアルポートの設定と、ArduinoにFirmataの書き込�
 
 # 実行
 
-Arduinoの`12`ピンからLEDと過電流にならない程度の抵抗を直列に回路を組む
+以下の図通りに回路を組む。
 
-localhost:3000にアクセス
+[回路図](http://johnny-five.io/img/breadboard/led-rgb.png)
 
-Ctrl + C ２回でプログラム終了
+RGBそれぞれに過電流にならない程度の抵抗を挟んだ。
 
-**LED**が光った状態で終了すると光ったまま
+`npm index.js`してlocalhost:3000にアクセス
+
+＊LEDが光った状態で終了すると光ったまま
 
 # 参考
 
 - [Arduinoをブラウザから動かした話](https://qiita.com/masayasviel/items/e6bf949b81d42da27d9a)
 - [Web Speech API](https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API)
+- [johnny-five LED-RGB](http://johnny-five.io/examples/led-rgb/)

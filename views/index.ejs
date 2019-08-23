@@ -8,9 +8,20 @@
     <body>
         <head><h1>ボタンを押して話しかけてください</h1></head>
         <main>
-            <p>『つける』で点灯、『消える』で消灯</p>
             <p class="hoge"><%-content %></p>
             <p>音声認識:<input type="button" value="ボタン" onclick="getSpeech()"></p>
+            <p>以下の色に光ります。</p>
+            <table border="1" bordercolor="#333333">
+                <tr><th>色</th><th>音声入力</th></tr>
+                <tr><td bgcolor="#FF0000"><font color="#FFFFFF">赤</font></td><td>赤色</td></tr>
+                <tr><td bgcolor="#FF00FF"><font color="#000000">ピンク</font></td><td>桃色</td></tr>
+                <tr><td bgcolor="#FFFF00"><font color="#000000">黄色</font></td><td>黄色</td></tr>
+                <tr><td bgcolor="#00FF00"><font color="#000000">緑</font></td><td>緑色</td></tr>
+                <tr><td bgcolor="#0000FF"><font color="#FFFFFF">青</font></td><td>青色</td></tr>
+                <tr><td bgcolor="#4B0082"><font color="#FFFFFF">紫</font></td><td>紫</td></tr>
+                <tr><td bgcolor="#FFFFFF"><font color="#000000">白(全灯)</font></td><td>つける</td></tr>
+                <tr><td bgcolor="#000000"><font color="#FFFFFF">黒(消灯)</font></td><td>消える</td></tr>
+            </table>
             <form name="voiceData" action="/" method="post">
                 <input type="hidden" name="ope_data" value="">
             </form>
